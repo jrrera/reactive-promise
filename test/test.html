@@ -1,0 +1,13 @@
+<head>
+  <title>test</title>
+</head>
+<template name="test">
+  {{#if isReactivePromiseReady 'myTask2'}}
+  <div id="test">Ready!</div>
+  {{else}}
+  <div id="test">Waiting for Task2...</div>
+  {{/if}}
+</template>
+<template name="loading">
+  <div id="test">Waiting for Task1...</div>
+</template>
