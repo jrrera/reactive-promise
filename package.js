@@ -1,7 +1,7 @@
 Package.describe({
   "name": "arsnebula:reactive-promise",
   "summary": "Make jQuery Deferred promises reactive",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "git": "https://github.com/arsnebula/reactive-promise.git"
 });
 

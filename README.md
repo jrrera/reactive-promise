@@ -13,7 +13,7 @@ as a reactive data source. Common use cases include:
 
 ## Current Version
 
-**v0.9.0**
+**v0.9.1**
 
 ## Usage
 
@@ -22,7 +22,7 @@ traditional callback model, but provides some additional flexibility including t
 to generate **promises** - tokens that can be passed around and monitored for task completion.
 
 The following example shows how easily a traditional callback method (a Meteor method call)
-can be converted to support a ``jQuery.Deferred``:
+can be converted to support ``jQuery.Deferred``.
 
 ```js
 var $dep = new $.Deferred();
@@ -41,6 +41,7 @@ the ``ReactivePromise.when`` method providing a task name, and one or
 more promises to monitor for completion.
 
 > ReactivePromise.when(task, promise [, promise])
+
 - **task**: provide a string identifier for the task to monitor
 - **promise**: an array, or one or more individual promise objects as arguments
 
@@ -82,6 +83,7 @@ Tracker.autorun(function(c) {
     console.log("Task complete.");
   }
 });
+```
 
 ## Conditional Template Rendering
 
@@ -97,6 +99,7 @@ should match the task identifier used with ``ReactivePromise.when``.
   <div>Waiting...</div>
   {{#/if}}
 </template>
+```
 
 ## Iron Router waitOn
 
@@ -116,8 +119,8 @@ Router.route('/route', {
 });
 ```
 
-If you have already added the task in an alternate location, you can retrieve it
-a new handle using the ``getHandle`` method:
+If you have already added the task in an alternate location, you can retrieve a
+handle using the ``getHandle`` method:
 
 ```js
 Router.route('/route', {
