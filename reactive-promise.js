@@ -24,9 +24,13 @@ ReactivePromise = function() {
     _tasks[task] = new ReactiveVar(false);
     var promises = _.chain(arguments).toArray().rest().flatten().value();
 
-    $.when.apply($, promises).always(function() {
-      _tasks[task].set(true);
-    });
+    Promise.all(promises)
+      .then(function() {
+        _tasks[task].set(true);
+      })
+      .catch(function() {
+        _tasks[task].set(true);
+      })
 
     return getHandle(task);
 
