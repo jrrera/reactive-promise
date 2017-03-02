@@ -23,10 +23,8 @@ ReactivePromise = function() {
     check(task, String);
     _tasks[task] = new ReactiveVar(false);
     var promises = _.chain(arguments).toArray().rest().flatten().value();
-    console.log("Promises for " + task + " " + promises);
 
     $.when.apply($, promises).always(function() {
-      console.log("Promises completed for " + task);
       _tasks[task].set(true);
     });
 
